@@ -10,11 +10,11 @@ import PrivateRoute from "./components/PrivateRoute";
 
 // Auth
 import Login from "./pages/Auth/Login";
-import Register from "./pages/Auth/Register";
 
 import AdminRoute from "./pages/Admin/AdminRoute";
 import Profile from "./pages/User/Profile";
 import UserList from "./pages/Admin/UserList";
+import Register from "./pages/Auth/REgister.jsx";
 
 const router = createBrowserRouter(
 	createRoutesFromElements(
