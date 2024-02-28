@@ -8,7 +8,7 @@ import {
 } from "react-icons/ai";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { useLogoutMutation } from "../../redux/api/usersApiSlice";
+import { useLogoutMutation } from "../../redux/api/userApiSlice";
 import { logout } from "../../redux/features/auth/authSlice";
 import { Link } from "react-router-dom";
 import "./Navigation.css";
@@ -52,9 +52,8 @@ const Navigation = () => {
       {/* Burger menu for medium screens and smaller */}
       <button
         onClick={toggleSidebar}
-        className={`md:hidden fixed top-4 right-4 z-50 text-white ${
-          showSidebar ? "hidden" : "block"
-        }`}
+        className={`md:hidden fixed top-4 right-4 z-50 text-white block ${showSidebar ? "hidden" : "block"
+          }`}
         style={{ zIndex: 9999 }}
       >
         <div className="burger-menu-bar w-6 h-1 bg-white mb-1"></div>
@@ -110,9 +109,8 @@ const Navigation = () => {
       {/* Desktop navigation */}
       <div
         style={{ zIndex: 9999 }}
-        className={`${
-          showSidebar ? "hidden" : "flex"
-        } xl:flex lg:flex md:hidden sm:hidden flex-col justify-between p-4 text-white bg-[#000] w-[4%] hover:w-[15%] h-[100vh]  fixed `}
+        className={`${showSidebar ? "hidden" : "flex"
+          } xl:flex lg:flex md:hidden sm:hidden flex-col justify-between p-4 text-white bg-[#000] w-[4%] hover:w-[15%] h-[100vh]  fixed `}
         id="navigation-container"
       >
         {/* Rest of your navigation code goes here */}
@@ -164,9 +162,8 @@ const Navigation = () => {
             {userInfo && (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className={`h-4 w-4 ml-1 ${
-                  dropdownOpen ? "transform rotate-180" : ""
-                }`}
+                className={`h-4 w-4 ml-1 ${dropdownOpen ? "transform rotate-180" : ""
+                  }`}
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="white"
@@ -183,9 +180,8 @@ const Navigation = () => {
 
           {dropdownOpen && userInfo && (
             <ul
-              className={`absolute right-0 mt-2 mr-14 space-y-2 bg-white text-gray-600 ${
-                !userInfo.isAdmin ? "-top-20" : "-top-80"
-              } `}
+              className={`absolute right-0 mt-2 mr-14 space-y-2 bg-white text-gray-600 ${!userInfo.isAdmin ? "-top-20" : "-top-80"
+                } `}
             >
               {userInfo.isAdmin && (
                 <>
