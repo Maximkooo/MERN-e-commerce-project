@@ -1,4 +1,4 @@
-import { userSelectro } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { selectFavoriteProduct } from '../../redux/features/favorites/favoriteSlice';
 import Product from './Product';
 

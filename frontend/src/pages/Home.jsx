@@ -16,7 +16,8 @@ const Home = () => {
         <Loader />
       ) : isError ? (
         <Message variant="danger">
-          {isError?.data.message || isError.error}
+          {/* TODO: delete commit */}
+          {/* {isError?.data.message || isError.error} */}
         </Message>
       ) : (
         <>

@@ -6,7 +6,7 @@ import {
 	useDeleteUserMutation,
 	useGetUsersQuery,
 	useUpdateUserMutation,
-} from "../../redux/api/userApiSlice";
+} from "../../redux/api/usersApiSlice";
 import { toast } from "react-toastify";
 // ⚠️⚠️⚠️ don't forget this ⚠️⚠️⚠️⚠️
 // import AdminMenu from "./AdminMenu";
