@@ -58,6 +58,14 @@ const loginUser = asyncHandler(async (req, res) => {
       });
       return;
     }
+    else {
+      res.status(404);
+      throw new Error("Not valid password");
+    }
+  }
+  else {
+    res.status(404);
+    throw new Error("User not found.");
   }
 });
 
