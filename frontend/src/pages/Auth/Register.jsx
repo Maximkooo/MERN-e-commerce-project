@@ -48,8 +48,8 @@ const Register = () => {
   };
 
   return (
-    <section className="pl-[10rem] flex flex-wrap">
-      <div className="mr-[4rem] mt-[5rem]">
+    <section className="xl:pl-[10rem] lg:pl-[5rem] md:pl-0 sm:pl-0 flex flex-wrap">
+      <div className="mr-4 md:mr-0 mt-5 md:mt-0 w-full md:w-[60%]">
         <h1 className="text-2xl font-semibold mb-4">Register</h1>
 
         <form onSubmit={submitHandler} className="container w-[40rem]">
