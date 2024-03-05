@@ -116,8 +116,8 @@ const Shop = () => {
 						</h2>
 
 						<div className="p-5 sm:w-full md:w-1/2 lg:w-1/3">
-							{uniqueBrands?.map((brand) => (
-								<>
+							{uniqueBrands?.map((brand, idx) => (
+								<div key={idx}>
 									<div className="p-5 sm:w-full md:w-1/2 lg:w-1/3">
 										<input
 											type="radio"
@@ -134,7 +134,7 @@ const Shop = () => {
 											{brand}
 										</label>
 									</div>
-								</>
+								</div>
 							))}
 						</div>
 
