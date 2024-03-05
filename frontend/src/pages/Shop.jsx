@@ -82,14 +82,14 @@ const Shop = () => {
 
 	return (
 		<>
-			<div className="container mx-auto sm:w-full md:w-2/3 lg:w-1/2 xl:w-2/3">
-				<div className="flex flex-col sm:flex-row">
+			<div className="container mx-auto">
+				<div className="flex md:flex-row">
 					<div className="bg-[#151515] p-3 mt-2 mb-2">
 						<h2 className="h4 text-center py-2 bg-black rounded-full mb-2">
 							Filter by Categories
 						</h2>
 
-						<div className="p-5 sm:w-full md:w-1/2 lg:w-1/3">
+						<div className="p-5 w-[15rem]">
 							{categories?.map((c) => (
 								<div key={c._id} className="mb-2">
 									<div className="flex ietms-center mr-4">
@@ -115,16 +115,16 @@ const Shop = () => {
 							Filter by Brands
 						</h2>
 
-						<div className="p-5 sm:w-full md:w-1/2 lg:w-1/3">
+						<div className="p-5">
 							{uniqueBrands?.map((brand) => (
 								<>
-									<div className="p-5 sm:w-full md:w-1/2 lg:w-1/3">
+									<div className="flex items-enter mr-4 mb-5">
 										<input
 											type="radio"
 											id={brand}
 											name="brand"
 											onChange={() => handleBrandClick(brand)}
-											className="w-full md:w-2/3 px-3 py-2 placeholder-gray-400 border rounded-lg focus:outline-none focus:ring focus:border-pink-300"
+											className="w-4 h-4 text-pink-400 bg-gray-100 border-gray-300 focus:ring-pink-500 dark:focus:ring-pink-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
 										/>
 
 										<label
@@ -148,13 +148,13 @@ const Shop = () => {
 								placeholder="Enter Price"
 								value={priceFilter}
 								onChange={handlePriceChange}
-								className="w-full md:w-2/3 px-3 py-2 placeholder-gray-400 border rounded-lg focus:outline-none focus:ring focus:border-pink-300"
+								className="w-full px-3 py-2 placeholder-gray-400 border rounded-lg focus:outline-none focus:ring focus:border-pink-300"
 							/>
 						</div>
 
-						<div className="p-5 sm:w-full md:w-1/2 lg:w-1/3">
+						<div className="p-5 pt-0">
 							<button
-								className="w-full  border my-4"
+								className="w-full border my-4"
 								onClick={() => window.location.reload()}
 							>
 								Reset
@@ -162,7 +162,7 @@ const Shop = () => {
 						</div>
 					</div>
 
-					<div className="md:p-3">
+					<div className="p-3">
 						<h2 className="h4 text-center mb-2">{products?.length} Products</h2>
 						<div className="flex flex-wrap">
 							{products.length === 0 ? (
