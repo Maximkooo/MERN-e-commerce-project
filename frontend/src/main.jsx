@@ -13,6 +13,7 @@ import Login from './pages/Auth/Login';
 
 import AdminRoute from './pages/Admin/AdminRoute';
 import Profile from './pages/User/Profile';
+import UserOrder from './pages/User/UserOrder';
 import UserList from './pages/Admin/UserList';
 import Register from './pages/Auth/Register';
 import CategoryList from './pages/Admin/CategoryList';
@@ -49,6 +50,7 @@ const router = createBrowserRouter(
 				<Route path="/shipping" element={<Shipping />} />
 				<Route path="/placeorder" element={<PlaceOrder />} />
 				<Route path="/order/:id" element={<Order />} />
+				<Route path="user-orders" element={<UserOrder />} />
 			</Route>
 
 			<Route path="/admin" element={<AdminRoute />}>
