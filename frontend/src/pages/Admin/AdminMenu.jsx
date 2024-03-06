@@ -28,9 +28,9 @@ const AdminMenu = () => {
       </button>
 
       {isMenuOpen && (
-        <section className="bg-[#151515] p-4 fixed right-7 top-5">
+        <section className="bg-[#151515] p-4 fixed right-12 top-5">
           <ul className="list-none mt-2">
-            <li>
+            {/* <li>
               <NavLink
                 className="list-item py-2 px-3 block mb-5 hover:bg-[#2E2D2D] rounded-sm"
                 to="/admin/dashboard"
@@ -40,7 +40,7 @@ const AdminMenu = () => {
               >
                 Admin Dashboard
               </NavLink>
-            </li>
+            </li> */}
             <li>
               <NavLink
                 className="list-item py-2 px-3 block mb-5 hover:bg-[#2E2D2D] rounded-sm"
