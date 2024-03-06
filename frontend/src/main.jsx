@@ -25,7 +25,7 @@ import ProductUpdate from './pages/Admin/ProductUpdate';
 import Home from './pages/Home.jsx';
 import Favorites from './pages/Products/Favorites.jsx';
 import ProductDetails from './pages/Products/ProductDetails.jsx';
-import AdminDashboard from './pages/Admin/AdminDashboard.jsx';
+// import AdminDashboard from './pages/Admin/AdminDashboard.jsx';
 import Cart from './pages/Cart.jsx';
 import Shop from './pages/Shop.jsx';
 import Shipping from './pages/Orders/Shipping.jsx';
@@ -61,7 +61,7 @@ const router = createBrowserRouter(
 				<Route path="productlist/:pageNumber" element={<ProductList />} />
 				<Route path="product/update/:_id" element={<ProductUpdate />} />
 				<Route path="orderlist" element={<OrderList />} />
-				<Route path="dashboard" element={<AdminDashboard />} />
+				{/* <Route path="dashboard" element={<AdminDashboard />} /> */}
 			</Route>
 		</Route>
 	)
