@@ -79,7 +79,9 @@ const OrderList = () => {
 
 								<td>
 									<Link to={`/order/${order._id}`}>
-										<button>More</button>
+										<button className="bg-pink-400 text-back py-2 px-3 rounded">
+											View Details
+										</button>
 									</Link>
 								</td>
 							</tr>
