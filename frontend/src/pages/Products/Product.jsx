@@ -1,15 +1,17 @@
-import { Link } from 'react-router-dom';
-import HeartIcon from './HeartIcon';
+import { Link } from "react-router-dom";
+import HeartIcon from "./HeartIcon";
 
 const Product = ({ product }) => {
 	return (
 		<div className="w-[30rem] ml-[2rem] p-3 relative">
 			<div className="relative">
-				<img
-					src={product.image}
-					alt={product.name}
-					className="w-[30rem] rounded"
-				/>
+				<Link to={`/product/${product._id}`}>
+					<img
+						src={product.image}
+						alt={product.name}
+						className="w-[30rem] rounded"
+					/>
+				</Link>
 				<HeartIcon product={product} />
 			</div>
 
