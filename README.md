@@ -1,6 +1,6 @@
 # MERN E-Commerce App
 
-**Description:**
+<h2>Description:</h2>
 
 Welcome to E-Commerce App, a dynamic and user-friendly MERN (MongoDB, Express, React, Node.js) e-commerce platform designed to provide a seamless shopping experience. This comprehensive application integrates essential features for both users and administrators, ensuring a robust and efficient e-commerce ecosystem.
 
@@ -29,16 +29,13 @@ release v1.0
 
 <h2>Bug tracker</h2>
 
-If you find a bug, please report it <a href="https://github.com/Maximkooo/React-gitHub/issues">here on Github!</a>
+If you find a bug, please report it <a href="https://github.com/Maximkooo/MERN-e-commerce-project/issues">here on Github!</a>
 
 <h2>Developer</h2>
 
-Developed by :
+Developed by:
+<br/>
 <a href="https://www.linkedin.com/in/maksym-synytskyi-27a0a7222/">Maksym Synytskyi</a>
+<br/>
 <a href="https://www.linkedin.com/in/vlad-tkach-a1b821151/">Vlad Tkach</a>
 
-<ul>
-  <li><a href="https://www.linkedin.com/in/maksym-synytskyi-27a0a7222/">LinkedIn Profile</a></li>
-  <li><a href="https://github.com/Maximkooo">Github Profile</a></li>
-  <li><a href="https://maximkooo.github.io/synytskyi-portfolio/">Portfolio</a></li>
-</ul>
