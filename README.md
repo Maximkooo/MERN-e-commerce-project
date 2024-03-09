@@ -32,9 +32,6 @@ release v1.0
 If you find a bug, please report it <a href="https://github.com/Maximkooo/MERN-e-commerce-project/issues">here on Github!</a>
 
 <h2>Developer</h2>
-
-Developed by:
-<br/>
 <a href="https://www.linkedin.com/in/maksym-synytskyi-27a0a7222/">Maksym Synytskyi</a>
 <br/>
 <a href="https://www.linkedin.com/in/vlad-tkach-a1b821151/">Vlad Tkach</a>
