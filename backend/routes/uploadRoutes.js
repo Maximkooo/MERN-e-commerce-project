@@ -27,24 +27,27 @@ router.post("/", upload.single('image'), async (req, res) => {
       Body: imageBuffer,
       ContentType: req.file.mimetype,
     };
+
+    await s3.upload(params).promise();
+    const imageUrl = `https://${process.env.AWS_BUCKET_NAME}.s3-${process.env.AWS_REGION}.amazonaws.com/${fileName}`;
+
+    res.send({
+      "message": "Image uploaded successfully",
+      "image": imageUrl
+    });
+
+    // This code is for getting img using BE
+
     // const params2 = {
     //   Bucket: process.env.AWS_BUCKET_NAME,
     //   Key: fileName,
     // };
-
-    await s3.upload(params).promise();
-
-    const imageUrl = `https://${process.env.AWS_BUCKET_NAME}.s3-${process.env.AWS_REGION}.amazonaws.com/${fileName}`;
 
     // const data = await s3.getObject(params2).promise();
     // res.setHeader('Content-Type', data.ContentType);
     // console.log(data);
     // res.send(data.Body);
 
-    res.send({
-      "message": "Image uploaded successfully",
-      "image": imageUrl
-    });
   } catch (error) {
     console.error(error);
     res.status(500).send('Error upload');
