@@ -7,7 +7,7 @@ export default defineConfig({
 	server: {
 		proxy: {
 			"/api/": "http://localhost:5001",
-			"/frontend/uploads/": "http://localhost:5001",
+			"/frontend/public/uploads/": "http://localhost:5001",
 		},
 	},
 });
