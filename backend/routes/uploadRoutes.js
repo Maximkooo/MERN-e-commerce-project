@@ -1,56 +1,54 @@
-import path from "path";
-import express from "express";
+import AWS from 'aws-sdk'
 import multer from "multer";
-import fs from "fs"; // module for file system operations.
+import express from "express";
+import env from "dotenv"
+env.config()
+
 
 const router = express.Router();
+const s3 = new AWS.S3({
+  accessKeyId: process.env.AWS_ACCESS_KEY,
+  secretAccessKey: process.env.AWS_SECRET_KEY,
+  region: process.env.AWS_REGION,
+})
 
-const uploadDir = "uploads";
 
-// Check if the uploads directory exists
-if (!fs.existsSync(uploadDir)) {
-  fs.mkdirSync(uploadDir);
-}
 
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, uploadDir);
-  },
-  filename: (req, file, cb) => {
-    const extname = path.extname(file.originalname);
-    cb(null, `${file.fieldname}-${Date.now()}${extname}`);
-  },
-});
+const upload = multer({ storage: multer.memoryStorage() });
 
-const fileFilter = (req, file, cb) => {
-  const filetypes = /jpe?g|png|webp/;
-  const mimetypes = /image\/jpe?g|image\/png|image\/webp/;
-  const extname = path.extname(file.originalname).toLowerCase();
-  const mimetype = file.mimetype;
+router.post("/", upload.single('image'), async (req, res) => {
+  try {
+    const imageBuffer = req.file.buffer;
+    const fileName = `${Date.now()}_${req.file.originalname}`;
 
-  if (filetypes.test(extname) && mimetypes.test(mimetype)) {
-    cb(null, true);
-  } else {
-    cb(new Error("Images only"), false);
+    const params = {
+      Bucket: process.env.AWS_BUCKET_NAME,
+      Key: fileName,
+      Body: imageBuffer,
+      ContentType: req.file.mimetype,
+    };
+    // const params2 = {
+    //   Bucket: process.env.AWS_BUCKET_NAME,
+    //   Key: fileName,
+    // };
+
+    await s3.upload(params).promise();
+
+    const imageUrl = `https://${process.env.AWS_BUCKET_NAME}.s3-${process.env.AWS_REGION}.amazonaws.com/${fileName}`;
+
+    // const data = await s3.getObject(params2).promise();
+    // res.setHeader('Content-Type', data.ContentType);
+    // console.log(data);
+    // res.send(data.Body);
+
+    res.send({
+      "message": "Image uploaded successfully",
+      "image": imageUrl
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Error upload');
   }
-};
-
-const upload = multer({ storage, fileFilter });
-const uploadSingleImage = upload.single("image");
-
-router.post("/", (req, res) => {
-  uploadSingleImage(req, res, (err) => {
-    if (err) {
-      res.status(400).send({ message: err.message });
-    } else if (req.file) {
-      res.status(200).send({
-        message: "Image uploaded successfully",
-        image: `/${req.file.path}`,
-      });
-    } else {
-      res.status(400).send({ message: "No image file provided" });
-    }
-  });
 });
 
 export default router;
